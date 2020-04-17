@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+import ImageDetail from "../components/ImageDetail";
 
 const RestaurantScreen = () => {
   const recipes = [
@@ -34,10 +35,16 @@ const RestaurantScreen = () => {
       data={recipes}
       renderItem={({ item }) => {
         return (
-            
+            <View>
+            <ImageDetail
+            title="Forest"
+            imageSource={require("../../assets/forest.jpg")}
+            score="4"
+          /> 
           <Text style={styles.textStyle}>
             {item.name} - Today's score {item.today}
           </Text>
+          </View>
           
         );
       }}
